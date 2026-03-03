@@ -1,9 +1,11 @@
 ARG TYPE=SPIGOT
 ARG EULA=TRUE
+ARG ONLINE_MODE=FALSE
 FROM itzg/minecraft-server:latest
 
 ENV TYPE=SPIGOT
 ENV EULA=TRUE
+ENV ONLINE_MODE=FALSE
 
 # Copy server files (they will take on default permissions)
 WORKDIR /usr/src/init_data
@@ -21,3 +23,4 @@ RUN chmod +x /entrypoint.sh
 EXPOSE 25565
 
 ENTRYPOINT ["/entrypoint.sh"]
+
